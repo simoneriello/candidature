@@ -312,8 +312,8 @@ label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset
 <script>
 (function(){
   var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var topbar=document.querySelector(".top"),ticking=false;
-  function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(function(){topbar.classList.toggle("small",window.scrollY>40);ticking=false;});}
+  var topbar=document.querySelector(".top"),isSmall=null;
+  function onScroll(){var v=window.scrollY>40;if(v!==isSmall){isSmall=v;topbar.classList.toggle("small",v);}}
   window.addEventListener("scroll",onScroll,{passive:true});onScroll();
   function go(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});}
   document.querySelectorAll("[data-go]").forEach(function(b){b.addEventListener("click",function(){go(b.dataset.go)})});
