@@ -203,6 +203,11 @@ label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset
 .privacy p{margin:0;font-size:16px}
 .privacy .btn{align-self:flex-start;margin-top:6px}
 .done .btn{margin-top:8px}
+
+.tally-card{padding:clamp(18px, 3.4vw, 40px)}
+.tally-card iframe{display:block;width:100%;border:0;min-height:600px}
+.formnote{margin:18px 0 0;text-align:center;font-size:14px;color:var(--grey)}
+.formnote a{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -250,65 +255,11 @@ label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset
         <h2 id="f-title">Candidati ora</h2>
         <p class="hint">Un minuto dal telefono. Il CV puoi mandarlo anche dopo.</p>
       </div>
-      <div class="formcard">
-        <form id="f" action="https://formsubmit.co/candidature@mosnelfranciacorta.it" method="POST" enctype="multipart/form-data" novalidate>
-          <input type="hidden" name="_subject" id="subj" value="Candidatura agente">
-          <input type="hidden" name="_next" value="https://mosnelfranciacorta.it/?inviata=1">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="Canali" id="canali-h">
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
-          <fieldset class="fs">
-            <legend>Chi sei</legend>
-            <div class="row">
-              <div class="field"><label class="l" for="nome">Nome e cognome</label><input type="text" id="nome" name="Nome e cognome" autocomplete="name" autocapitalize="words" required></div>
-              <div class="field"><label class="l" for="agenzia">Agenzia <span class="opt">(facoltativo)</span></label><input type="text" id="agenzia" name="Agenzia" autocomplete="organization" placeholder="Nome dell'agenzia"></div>
-            </div>
-            <div class="row">
-              <div class="field"><label class="l" for="tel">Telefono</label><input type="tel" id="tel" name="Telefono" autocomplete="tel" inputmode="tel"></div>
-              <div class="field"><label class="l" for="email">Email</label><input type="email" id="email" name="Email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false"></div>
-            </div>
-          </fieldset>
-          <fieldset class="fs">
-            <legend>Come lavori</legend>
-            <div class="field">
-              <label class="l" for="zona">Zona per cui ti candidi</label>
-              <input type="text" id="zona" name="Zona" autocapitalize="words" placeholder="Province, città o aree" required>
-            </div>
-            <div class="field">
-              <span class="l" id="cl">Canali che segui</span>
-              <div class="chips" role="group" aria-labelledby="cl">
-                <label class="chip"><input type="checkbox" id="c1" value="Ristoranti"><span>Ristoranti</span></label>
-                <label class="chip"><input type="checkbox" id="c2" value="Enoteche"><span>Enoteche</span></label>
-                <label class="chip"><input type="checkbox" id="c3" value="Wine bar"><span>Wine bar</span></label>
-                <label class="chip"><input type="checkbox" id="c4" value="Hotel"><span>Hotel</span></label>
-                <label class="chip"><input type="checkbox" id="c5" value="Distribuzione"><span>Distribuzione</span></label>
-              </div>
-            </div>
-            <div class="field">
-              <label class="l" for="aziende">Aziende attualmente rappresentate</label>
-              <textarea id="aziende" name="Aziende rappresentate" placeholder="Cantine, distillerie e altri mandati"></textarea>
-            </div>
-          </fieldset>
-          <fieldset class="fs">
-            <legend>Documenti</legend>
-            <div class="field">
-              <label class="l" for="cv">CV o presentazione <span class="opt">(facoltativo, massimo 10 MB)</span></label>
-              <div class="file"><input type="file" id="cv" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"></div>
-              <p class="hint">Se non l'hai sul telefono, puoi mandarlo in seguito a candidature@mosnelfranciacorta.it.</p>
-            </div>
-            <label class="consent"><input type="checkbox" id="consenso" name="Consenso privacy" value="Sì"><span>Ho letto l'<a href="#privacy" data-privacy>informativa privacy</a> e acconsento al trattamento dei dati per valutare la collaborazione.</span></label>
-            <p class="error" id="err" hidden></p>
-          </fieldset>
-          <p class="hint" id="slow" hidden aria-live="polite">L'invio sta richiedendo più tempo del solito, soprattutto con un allegato pesante. Attendi ancora qualche secondo; se non si completa, scrivi a <b>candidature@mosnelfranciacorta.it</b>.</p>
-          <button class="btn primary submit" type="submit"><span>Invia candidatura</span><span class="arr" aria-hidden="true"></span></button>
-        </form>
-        <div class="done" id="done" hidden>
-          <h2>Grazie, candidatura ricevuta.</h2>
-          <p>Leggiamo ogni candidatura con attenzione e ti ricontattiamo al più presto.</p>
-          <p class="hint">Per aggiungere qualcosa puoi scrivere a <b>candidature@mosnelfranciacorta.it</b>.</p>
-          <button class="btn ghost" type="button" id="again">Invia un'altra candidatura</button>
-        </div>
+      <div class="formcard tally-card">
+        <iframe data-tally-src="https://tally.so/embed/4aaEGX?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="1180" frameborder="0" marginheight="0" marginwidth="0" title="Candidatura agenti Mosnel"></iframe>
+        <noscript><p>Per candidarti scrivi a candidature@mosnelfranciacorta.it</p></noscript>
       </div>
+      <p class="formnote">Prima di inviare leggi l'<a href="#privacy" data-privacy>informativa privacy</a>. Problemi con il modulo? Scrivi a <b>candidature@mosnelfranciacorta.it</b>.</p>
     </div>
   </section>
 
@@ -321,7 +272,7 @@ label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset
       <p><b>Quali dati.</b> Nome, recapiti, zona di interesse, aziende rappresentate e i documenti che scegli di inviarci, come CV o presentazione.</p>
       <p><b>Perché.</b> Solo per valutare una possibile collaborazione come agente di commercio e per ricontattarti. La base del trattamento è la tua richiesta e il consenso che ci dai inviando la candidatura.</p>
       <p><b>Per quanto tempo.</b> Conserviamo i dati per 24 mesi, poi li cancelliamo, salvo che nasca una collaborazione.</p>
-      <p><b>Con chi.</b> I dati non vengono ceduti a terzi. Il modulo è inviato tramite il servizio FormSubmit, che recapita la candidatura alla nostra casella email; i dati possono quindi essere trattati da questo fornitore e da quello della posta elettronica, solo per conto nostro.</p>
+      <p><b>Con chi.</b> I dati non vengono ceduti a terzi. Il modulo è gestito dal servizio Tally (Tally BV, Belgio), che conserva le candidature e ce le inoltra per email: i dati possono quindi essere trattati da questo fornitore e da quello della posta elettronica, solo per conto nostro.</p>
       <p><b>I tuoi diritti.</b> Puoi chiedere in qualsiasi momento di vedere, correggere o cancellare i tuoi dati, oppure revocare il consenso, scrivendo a candidature@mosnelfranciacorta.it. Puoi anche presentare reclamo al Garante per la protezione dei dati personali.</p>
       <button class="btn ghost" type="button" id="p-close">Chiudi</button>
     </div>
@@ -352,28 +303,9 @@ label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset
     [["hero",".hero"],["form","#form-sec .formcard"]].forEach(function(p){var el=document.querySelector(p[1]);el.dataset.k=p[0];io.observe(el);});
   }
 
-  var f=document.getElementById("f"),err=document.getElementById("err"),done=document.getElementById("done");
-  function v(id){return document.getElementById(id).value.trim();}
-  f.addEventListener("submit",function(e){
-    e.preventDefault();
-    var miss=[];
-    if(!v("nome"))miss.push("nome e cognome");
-    if(!v("tel")&&!v("email"))miss.push("un telefono o un'email");
-    if(!v("zona"))miss.push("la zona");
-    if(!document.getElementById("consenso").checked)miss.push("il consenso privacy");
-    if(miss.length){err.textContent="Per inviare manca: "+miss.join(", ")+".";err.hidden=false;err.scrollIntoView({block:"center"});return;}
-    var file=document.getElementById("cv").files[0];
-    if(file&&file.size>10*1024*1024){err.textContent="Il file supera 10 MB. Scegline uno più leggero, oppure mandalo dopo per email.";err.hidden=false;err.scrollIntoView({block:"center"});return;}
-    err.hidden=true;
-    document.getElementById("canali-h").value=[].slice.call(document.querySelectorAll(".chips input:checked")).map(function(c){return c.value}).join(", ")||"-";
-    document.getElementById("subj").value="Candidatura agente - "+v("zona")+" - "+v("nome");
-    var btn=f.querySelector(".submit");btn.disabled=true;btn.firstChild.textContent="Invio in corso";
-    setTimeout(function(){document.getElementById("slow").hidden=false;},20000);
-    f.submit();
-  });
-  document.getElementById("again").addEventListener("click",function(){done.hidden=true;f.hidden=false;f.reset();var b=f.querySelector(".submit");b.disabled=false;b.firstChild.textContent="Invia candidatura";});
-  if(/[?&]inviata=1/.test(location.search)){f.hidden=true;done.hidden=false;setTimeout(function(){go("form-sec")},50);try{history.replaceState(null,"",location.pathname)}catch(e){}}
-  window.addEventListener("pageshow",function(){document.getElementById("slow").hidden=true;var b=f.querySelector(".submit");b.disabled=false;b.firstChild.textContent="Invia candidatura";});
+  var d=document,w="https://tally.so/widgets/embed.js";
+  function load(){if(typeof Tally!=="undefined"){Tally.loadEmbeds();}else{d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc;});}}
+  if(typeof Tally!=="undefined"){load();}else if(!d.querySelector('script[src="'+w+'"]')){var sc=d.createElement("script");sc.src=w;sc.onload=load;sc.onerror=load;d.body.appendChild(sc);}
 })();
 </script>
 
