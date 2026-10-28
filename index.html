@@ -251,28 +251,23 @@ label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset
         <p class="hint">Un minuto dal telefono. Il CV puoi mandarlo anche dopo.</p>
       </div>
       <div class="formcard">
-        <form id="f" action="https://formsubmit.co/candidature@mosnelfranciacorta.it" method="POST" enctype="multipart/form-data" novalidate>
-          <input type="hidden" name="_subject" id="subj" value="Candidatura agente">
-          <input type="hidden" name="_next" value="https://mosnelfranciacorta.it/?inviata=1">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="Canali" id="canali-h">
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <form id="f" novalidate>
           <fieldset class="fs">
             <legend>Chi sei</legend>
             <div class="row">
-              <div class="field"><label class="l" for="nome">Nome e cognome</label><input type="text" id="nome" name="Nome e cognome" autocomplete="name" autocapitalize="words" required></div>
-              <div class="field"><label class="l" for="agenzia">Agenzia <span class="opt">(facoltativo)</span></label><input type="text" id="agenzia" name="Agenzia" autocomplete="organization" placeholder="Nome dell'agenzia"></div>
+              <div class="field"><label class="l" for="nome">Nome e cognome</label><input type="text" id="nome" autocomplete="name" autocapitalize="words" required></div>
+              <div class="field"><label class="l" for="agenzia">Agenzia <span class="opt">(facoltativo)</span></label><input type="text" id="agenzia" autocomplete="organization" placeholder="Nome dell'agenzia"></div>
             </div>
             <div class="row">
-              <div class="field"><label class="l" for="tel">Telefono</label><input type="tel" id="tel" name="Telefono" autocomplete="tel" inputmode="tel"></div>
-              <div class="field"><label class="l" for="email">Email</label><input type="email" id="email" name="Email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false"></div>
+              <div class="field"><label class="l" for="tel">Telefono</label><input type="tel" id="tel" autocomplete="tel" inputmode="tel"></div>
+              <div class="field"><label class="l" for="email">Email</label><input type="email" id="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false"></div>
             </div>
           </fieldset>
           <fieldset class="fs">
             <legend>Come lavori</legend>
             <div class="field">
               <label class="l" for="zona">Zona per cui ti candidi</label>
-              <input type="text" id="zona" name="Zona" autocapitalize="words" placeholder="Province, città o aree" required>
+              <input type="text" id="zona" autocapitalize="words" placeholder="Province, città o aree" required>
             </div>
             <div class="field">
               <span class="l" id="cl">Canali che segui</span>
@@ -286,26 +281,22 @@ label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset
             </div>
             <div class="field">
               <label class="l" for="aziende">Aziende attualmente rappresentate</label>
-              <textarea id="aziende" name="Aziende rappresentate" placeholder="Cantine, distillerie e altri mandati"></textarea>
+              <textarea id="aziende" placeholder="Cantine, distillerie e altri mandati"></textarea>
             </div>
           </fieldset>
           <fieldset class="fs">
             <legend>Documenti</legend>
-            <div class="field">
-              <label class="l" for="cv">CV o presentazione <span class="opt">(facoltativo, massimo 10 MB)</span></label>
-              <div class="file"><input type="file" id="cv" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"></div>
-              <p class="hint">Se non l'hai sul telefono, puoi mandarlo in seguito a candidature@mosnelfranciacorta.it.</p>
-            </div>
-            <label class="consent"><input type="checkbox" id="consenso" name="Consenso privacy" value="Sì"><span>Ho letto l'<a href="#privacy" data-privacy>informativa privacy</a> e acconsento al trattamento dei dati per valutare la collaborazione.</span></label>
+            <p class="docnote">Premendo "Invia candidatura" si apre la tua app di posta con la candidatura già scritta: lì puoi allegare CV o presentazione. Puoi anche mandarli in seguito a <b>candidature@mosnelfranciacorta.it</b>.</p>
+            <label class="consent"><input type="checkbox" id="consenso"><span>Ho letto l'<a href="#privacy" data-privacy>informativa privacy</a> e acconsento al trattamento dei dati per valutare la collaborazione.</span></label>
             <p class="error" id="err" hidden></p>
           </fieldset>
           <button class="btn primary submit" type="submit"><span>Invia candidatura</span><span class="arr" aria-hidden="true"></span></button>
         </form>
         <div class="done" id="done" hidden>
-          <h2>Grazie, candidatura ricevuta.</h2>
-          <p>Leggiamo ogni candidatura con attenzione e ti ricontattiamo al più presto.</p>
-          <p class="hint">Per aggiungere qualcosa puoi scrivere a <b>candidature@mosnelfranciacorta.it</b>.</p>
-          <button class="btn ghost" type="button" id="again">Invia un'altra candidatura</button>
+          <h2>Ci siamo quasi.</h2>
+          <p>Si è aperta la tua app di posta con la candidatura già scritta. Allega il CV se vuoi e premi <b>Invia</b>.</p>
+          <p class="hint">Non si è aperta? Scrivi a <b>candidature@mosnelfranciacorta.it</b> indicando nome, zona e aziende rappresentate.</p>
+          <button class="btn ghost" type="button" id="again">Torna al modulo</button>
         </div>
       </div>
     </div>
@@ -320,7 +311,7 @@ label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset
       <p><b>Quali dati.</b> Nome, recapiti, zona di interesse, aziende rappresentate e i documenti che scegli di inviarci, come CV o presentazione.</p>
       <p><b>Perché.</b> Solo per valutare una possibile collaborazione come agente di commercio e per ricontattarti. La base del trattamento è la tua richiesta e il consenso che ci dai inviando la candidatura.</p>
       <p><b>Per quanto tempo.</b> Conserviamo i dati per 24 mesi, poi li cancelliamo, salvo che nasca una collaborazione.</p>
-      <p><b>Con chi.</b> I dati non vengono ceduti a terzi. Il modulo è inviato tramite il servizio FormSubmit, che recapita la candidatura alla nostra casella email; i dati possono quindi essere trattati da questo fornitore e da quello della posta elettronica, solo per conto nostro.</p>
+      <p><b>Con chi.</b> I dati non vengono ceduti a terzi. Possono essere trattati dai fornitori dei servizi di posta elettronica che usiamo, solo per conto nostro.</p>
       <p><b>I tuoi diritti.</b> Puoi chiedere in qualsiasi momento di vedere, correggere o cancellare i tuoi dati, oppure revocare il consenso, scrivendo a candidature@mosnelfranciacorta.it. Puoi anche presentare reclamo al Garante per la protezione dei dati personali.</p>
       <button class="btn ghost" type="button" id="p-close">Chiudi</button>
     </div>
@@ -361,17 +352,14 @@ label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset
     if(!v("zona"))miss.push("la zona");
     if(!document.getElementById("consenso").checked)miss.push("il consenso privacy");
     if(miss.length){err.textContent="Per inviare manca: "+miss.join(", ")+".";err.hidden=false;err.scrollIntoView({block:"center"});return;}
-    var file=document.getElementById("cv").files[0];
-    if(file&&file.size>10*1024*1024){err.textContent="Il file supera 10 MB. Scegline uno più leggero, oppure mandalo dopo per email.";err.hidden=false;err.scrollIntoView({block:"center"});return;}
     err.hidden=true;
-    document.getElementById("canali-h").value=[].slice.call(document.querySelectorAll(".chips input:checked")).map(function(c){return c.value}).join(", ")||"-";
-    document.getElementById("subj").value="Candidatura agente - "+v("zona")+" - "+v("nome");
-    var btn=f.querySelector(".submit");btn.disabled=true;btn.firstChild.textContent="Invio in corso";
-    f.submit();
+    var canali=[].slice.call(document.querySelectorAll(".chips input:checked")).map(function(c){return c.value}).join(", ");
+    var body=["Nome e cognome: "+v("nome"),"Agenzia: "+(v("agenzia")||"-"),"Telefono: "+(v("tel")||"-"),"Email: "+(v("email")||"-"),"Zona: "+v("zona"),"Canali: "+(canali||"-"),"Aziende rappresentate: "+(v("aziende")||"-"),"","Consenso privacy: sì","","(Allega qui CV o presentazione, se vuoi)"].join("\n");
+    var subj="Candidatura agente - "+v("zona");
+    location.href="mailto:candidature@mosnelfranciacorta.it?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);
+    f.hidden=true;done.hidden=false;
   });
-  document.getElementById("again").addEventListener("click",function(){done.hidden=true;f.hidden=false;f.reset();var b=f.querySelector(".submit");b.disabled=false;b.firstChild.textContent="Invia candidatura";});
-  if(/[?&]inviata=1/.test(location.search)){f.hidden=true;done.hidden=false;setTimeout(function(){go("form-sec")},50);try{history.replaceState(null,"",location.pathname)}catch(e){}}
-  window.addEventListener("pageshow",function(){var b=f.querySelector(".submit");b.disabled=false;b.firstChild.textContent="Invia candidatura";});
+  document.getElementById("again").addEventListener("click",function(){done.hidden=true;f.hidden=false;});
 })();
 </script>
 
