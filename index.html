@@ -304,7 +304,7 @@ label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset
   }
 
   var d=document,w="https://tally.so/widgets/embed.js";
-  function fallback(){d.querySelectorAll("iframe[data-tally-src]").forEach(function(e){if(!e.getAttribute("src"))e.src=e.dataset.tallySrc;});}
+  function fallback(){d.querySelectorAll("iframe[data-tally-src]").forEach(function(e){if(!e.getAttribute("src")){var u=e.dataset.tallySrc;e.removeAttribute("data-tally-src");e.src=u;}});if(typeof Tally!=="undefined"){try{Tally.loadEmbeds();}catch(e){}}}
   function load(){if(typeof Tally!=="undefined"){try{Tally.loadEmbeds();}catch(e){}}setTimeout(fallback,3000);}
   if(typeof Tally!=="undefined"){load();}else if(!d.querySelector('script[src="'+w+'"]')){var sc=d.createElement("script");sc.src=w;sc.onload=load;sc.onerror=load;d.body.appendChild(sc);}
 })();
