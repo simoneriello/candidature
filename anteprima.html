@@ -107,6 +107,11 @@ h2{font-family:var(--display);font-weight:600;font-size:clamp(34px, 4.2vw, 52px)
 .zcap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px 18px 20px;display:flex;flex-direction:column;gap:4px;color:var(--white)}
 .zcap .zn{font-family:var(--display);font-weight:600;font-size:clamp(32px, 3.2vw, 44px);line-height:1;text-shadow:0 1px 18px rgba(0,0,0,.35)}
 .zcap .zr{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#E7D9C4}
+.zlink{all:unset;box-sizing:border-box;position:absolute;inset:0;display:block;cursor:pointer;border-radius:4px}
+.zlink:focus-visible{outline:2px solid var(--bronze-deep);outline-offset:3px}
+.zgo{position:absolute;top:14px;right:14px;z-index:2;font:600 12px var(--sans);letter-spacing:.04em;color:var(--ink);background:rgba(255,255,255,.92);border-radius:999px;padding:6px 12px;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s}
+.zcard:hover .zgo,.zlink:focus-visible .zgo{opacity:1;transform:none}
+@media (hover:none){.zgo{opacity:1;transform:none;font-size:11px;padding:5px 10px;top:10px;right:10px}}
 .zcredit{margin:0;font-size:11px;line-height:1.5;color:var(--grey)}
 .zcredit a{color:var(--grey)}
 @media (max-width:959px){.zgrid{grid-template-columns:repeat(2, minmax(0,1fr))}}
@@ -243,10 +248,10 @@ label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset
         <h2 id="z-title">Dove cerchiamo</h2>
       </div>
       <ul class="zgrid">
-        <li class="zcard"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Dal_ponte_dei_Buranelli_a_Treviso.jpg/960px-Dal_ponte_dei_Buranelli_a_Treviso.jpg" alt="Il canale dei Buranelli a Treviso" loading="lazy" decoding="async" style="object-position:50% 55%"><div class="zcap"><span class="zn">Treviso</span><span class="zr">Veneto</span></div></li>
-        <li class="zcard"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Italy_-_Verona_-_Arena.jpg/960px-Italy_-_Verona_-_Arena.jpg" alt="L'Arena di Verona" loading="lazy" decoding="async" style="object-position:50% 50%"><div class="zcap"><span class="zn">Verona</span><span class="zr">Veneto</span></div></li>
-        <li class="zcard"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Udine_Loggia_del_Lionello.jpg/960px-Udine_Loggia_del_Lionello.jpg" alt="La Loggia del Lionello a Udine" loading="lazy" decoding="async" style="object-position:50% 50%"><div class="zcap"><span class="zn">Udine</span><span class="zr">Friuli Venezia Giulia</span></div></li>
-        <li class="zcard"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Piazza_Grande_Arezzo.JPG/960px-Piazza_Grande_Arezzo.JPG" alt="Piazza Grande ad Arezzo" loading="lazy" decoding="async" style="object-position:50% 55%"><div class="zcap"><span class="zn">Arezzo</span><span class="zr">Toscana</span></div></li>
+        <li class="zcard"><button class="zlink" type="button" data-go="form-sec" aria-label="Candidati per la zona di Treviso"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Dal_ponte_dei_Buranelli_a_Treviso.jpg/960px-Dal_ponte_dei_Buranelli_a_Treviso.jpg" alt="Il canale dei Buranelli a Treviso" loading="lazy" decoding="async" style="object-position:50% 55%"><div class="zcap"><span class="zn">Treviso</span><span class="zr">Veneto</span></div><span class="zgo" aria-hidden="true">Candidati</span></button></li>
+        <li class="zcard"><button class="zlink" type="button" data-go="form-sec" aria-label="Candidati per la zona di Verona"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Italy_-_Verona_-_Arena.jpg/960px-Italy_-_Verona_-_Arena.jpg" alt="L'Arena di Verona" loading="lazy" decoding="async" style="object-position:50% 50%"><div class="zcap"><span class="zn">Verona</span><span class="zr">Veneto</span></div><span class="zgo" aria-hidden="true">Candidati</span></button></li>
+        <li class="zcard"><button class="zlink" type="button" data-go="form-sec" aria-label="Candidati per la zona di Udine"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Udine_Loggia_del_Lionello.jpg/960px-Udine_Loggia_del_Lionello.jpg" alt="La Loggia del Lionello a Udine" loading="lazy" decoding="async" style="object-position:50% 50%"><div class="zcap"><span class="zn">Udine</span><span class="zr">Friuli Venezia Giulia</span></div><span class="zgo" aria-hidden="true">Candidati</span></button></li>
+        <li class="zcard"><button class="zlink" type="button" data-go="form-sec" aria-label="Candidati per la zona di Arezzo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Piazza_Grande_Arezzo.JPG/960px-Piazza_Grande_Arezzo.JPG" alt="Piazza Grande ad Arezzo" loading="lazy" decoding="async" style="object-position:50% 55%"><div class="zcap"><span class="zn">Arezzo</span><span class="zr">Toscana</span></div><span class="zgo" aria-hidden="true">Candidati</span></button></li>
       </ul>
       <div class="zfoot">
         <p>Se la tua area non è citata nell'elenco sopra</p>
