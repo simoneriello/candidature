@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unisciti a noi | Mosnel Franciacorta</title>
+<meta name="description" content="Mosnel cerca agenti di commercio plurimandatari. Inoltraci la tua candidatura.">
+<meta name="theme-color" content="#1A1714">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Unisciti a noi | Mosnel Franciacorta">
+<meta property="og:description" content="Stiamo ampliando la nostra struttura commerciale. Inoltraci la tua candidatura.">
+<meta property="og:image" content="https://mosnelfranciacorta.it/cantina.jpg">
+<meta property="og:url" content="https://mosnelfranciacorta.it/">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preload" as="image" href="cantina.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+html,body{margin:0}
+/* Layout: sezioni in sequenza a tutta larghezza, una idea per fascia: apertura, zone, form, email. I testi lunghi e il form restano su una colonna centrale di lettura comoda, le fasce colorate vanno da bordo a bordo. Serif del marchio per i titoli, sans per testi e campi. */
+:root{
+  --bg:#F7F4F0;
+  --panel:#EEE8E0;
+  --white:#FFFFFF;
+  --ink:#222224;
+  --grey:#5D5D61;
+  --line:#DDD3C7;
+  --bronze:#B39A7C;
+  --bronze-deep:#85674A;
+  --night:#26292B;
+  --night-ink:#ECE7E0;
+  --display:"Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
+  --sans:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme:light;
+  --logo:url("logo.png");
+  --img-vigna:url("cantina.jpg");
+  --img-botti:url("tenuta.jpg");
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+button,label.chip,input[type=checkbox]{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.gut{padding-left:max(18px, env(safe-area-inset-left, 0px));padding-right:max(18px, env(safe-area-inset-right, 0px))}
+@media (min-width:960px){.gut{padding-left:max(56px, env(safe-area-inset-left, 0px));padding-right:max(56px, env(safe-area-inset-right, 0px))}}
+.wide{max-width:1180px;margin:0 auto}
+.read{max-width:760px;margin:0 auto}
+:focus-visible{outline:2px solid var(--bronze-deep);outline-offset:3px}
+.logo{background:var(--logo) center/contain no-repeat;aspect-ratio:640/509;max-width:100%}
+
+
+/* testata */
+.top{padding-block:20px;display:flex;justify-content:center;background:var(--bg)}
+.top .logo{width:104px}
+
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-deep)}
+h1{font-family:var(--display);font-weight:500;font-style:italic;font-size:clamp(60px, 11vw, 140px);line-height:.92;letter-spacing:-.015em;margin:0;color:var(--ink);text-wrap:balance}
+h2{font-family:var(--display);font-weight:600;font-size:clamp(34px, 4.2vw, 52px);line-height:1.02;margin:0;text-wrap:balance}
+.lead{margin:0;font-size:clamp(19px, 2vw, 23px);line-height:1.45;max-width:32em}
+.hint{font-size:15px;color:var(--grey);margin:0}
+.sec{padding-block:clamp(56px, 8vw, 104px)}
+.sec-head{display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
+
+/* 1 apertura: foto a tutta larghezza, testo in basso a sinistra */
+.hero{position:relative;min-height:clamp(560px, 86vh, 900px);display:flex;align-items:flex-end;background:var(--ink) var(--img-vigna) center 50%/cover no-repeat;color:var(--white);padding-block:clamp(40px, 7vw, 88px)}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(20,20,22,0) 35%, rgba(20,20,22,.3) 58%, rgba(20,20,22,.8) 100%)}
+@media (max-width:700px){.hero{min-height:clamp(600px, 90vh, 840px);background-position:center center}}
+.hero .wide{position:relative;width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:22px}
+.hero .eyebrow{color:#E7D9C4}
+.hero h1{color:var(--white);text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.hero h1 .dot{color:var(--bronze)}
+.hero .lead{color:#F3EFE9}
+.hero .btn.primary{background:var(--white);color:var(--ink);border-color:var(--white)}
+.hero .btn.primary:hover{background:var(--bg)}
+.hero .btn.ghost{color:var(--white);border-color:rgba(255,255,255,.6)}
+.hero .btn.ghost:hover{background:rgba(255,255,255,.12);border-color:var(--white)}
+.ctas{justify-content:flex-start}
+.hero-photo{display:none}
+.credit{position:absolute;right:max(18px, env(safe-area-inset-right, 0px));top:16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+
+/* striscia fotografica */
+.strip{height:clamp(260px, 40vw, 520px);background:var(--ink) var(--img-botti) center 58%/cover no-repeat;position:relative;display:flex;align-items:flex-end}
+.strip::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(20,20,22,0) 55%, rgba(20,20,22,.55) 100%)}
+.strip span{position:relative;font-family:var(--display);font-style:italic;font-size:clamp(22px, 2.6vw, 30px);color:var(--white);padding-block:22px;text-shadow:0 1px 18px rgba(0,0,0,.5)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;padding-top:6px}
+.btn{display:inline-flex;align-items:center;gap:14px;font:600 16px var(--sans);border-radius:4px;padding:15px 24px;cursor:pointer;border:1px solid var(--ink);transition:background .2s,color .2s,border-color .2s}
+.btn.primary{background:var(--ink);color:var(--white)}
+.btn.primary:hover{background:var(--bronze-deep);border-color:var(--bronze-deep)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--white)}
+.arr{width:34px;height:1px;background:currentColor;position:relative;transition:width .25s}
+.arr::after{content:"";position:absolute;right:0;top:-4px;width:8px;height:8px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.btn:hover .arr{width:46px}
+.since{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+
+/* 2 zone */
+.zones-band{background:var(--panel)}
+.zones-band .wide{display:flex;flex-direction:column;gap:40px}
+.zgrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));border-top:1px solid var(--ink)}
+.zgrid li{display:flex;flex-direction:column;gap:4px;padding:22px 20px 22px 0;border-bottom:1px solid var(--line)}
+.zgrid .zn{font-family:var(--display);font-weight:600;font-size:clamp(34px, 3.6vw, 46px);line-height:1}
+.zgrid .zr{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.zfoot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.zfoot p{margin:0;font-size:clamp(18px, 1.8vw, 21px);max-width:30em}
+
+/* 3 form */
+.formcard{background:var(--white);border-radius:4px;box-shadow:0 1px 2px rgba(34,34,36,.05),0 24px 60px -28px rgba(34,34,36,.25);padding:clamp(24px, 4.4vw, 56px);display:flex;flex-direction:column;gap:32px;margin-top:40px}
+form{display:flex;flex-direction:column;gap:24px}
+.fs{display:flex;flex-direction:column;gap:18px;border:0;margin:0;padding:0;min-width:0}
+.fs + .fs{padding-top:26px;border-top:1px solid var(--line)}
+.fs legend{float:left;width:100%}
+.fs legend + *{clear:both}
+.fs legend{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-deep);padding:0;margin-bottom:4px}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:600px){.row{grid-template-columns:1fr}}
+.l{font-size:14px;font-weight:600;color:var(--ink)}
+.opt{font-weight:400;color:var(--grey)}
+input[type=text],input[type=email],input[type=tel],textarea{font:400 17px var(--sans);color:var(--ink);background:var(--bg);border:1px solid transparent;border-radius:4px;padding:13px 14px;width:100%;transition:border-color .2s,background .2s}
+input:hover,textarea:hover{border-color:var(--line)}
+input:focus,textarea:focus{outline:none;border-color:var(--ink);background:var(--white)}
+textarea{min-height:92px;resize:vertical}
+input::placeholder,textarea::placeholder{color:var(--grey);opacity:.75}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+label.chip{position:relative;cursor:pointer}
+label.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+label.chip span{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:500;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--white);transition:background .15s,border-color .15s}
+label.chip input:checked + span{background:var(--ink);border-color:var(--ink);color:var(--white)}
+label.chip input:checked + span::before{content:"✓";font-size:12px}
+label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset:2px}
+.file{border:1px dashed var(--line);border-radius:4px;padding:16px;background:var(--bg)}
+.file{min-width:0;overflow:hidden}
+.file input{font:14px var(--sans);max-width:100%;width:100%;color:var(--grey)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--grey)}
+.consent input{margin-top:3px;width:17px;height:17px;accent-color:var(--ink);flex:none}
+.consent a{color:var(--ink)}
+.error{color:#8E2433;font-size:14px;margin:0;font-weight:500}
+.submit{width:100%;justify-content:space-between;font-size:17px;padding:18px 24px}
+.done{display:flex;flex-direction:column;gap:10px;text-align:center;align-items:center;padding-block:24px}
+
+
+.foot{padding-block:22px;border-top:1px solid var(--line)}
+.foot .wide{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--grey)}
+.foot a{color:var(--grey)}
+
+/* telefono */
+@media (max-width:700px){
+  body{font-size:16px}
+  .top{padding-block:14px}
+  .top .logo{width:84px}
+  .hero{display:block;min-height:0;background:#1A1714;padding-block:0 36px}
+  .hero::before{display:none}
+  .hero-photo{display:block;position:relative;margin-left:calc(-1 * max(18px, env(safe-area-inset-left, 0px)));margin-right:calc(-1 * max(18px, env(safe-area-inset-right, 0px)));aspect-ratio:4/3;max-width:none;background:var(--img-vigna) 50% 55%/118% auto no-repeat}
+  .hero-photo::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(180deg, rgba(26,23,20,0), #1A1714)}
+  .hero .wide{margin-top:-28px}
+  .hero .wide{gap:16px}
+  .hero .eyebrow{font-size:11px;letter-spacing:.14em}
+  .eyebrow-extra{display:none}
+  h1{font-size:clamp(54px, 16vw, 72px)}
+  .lead{font-size:18px}
+  .ctas{flex-direction:column;align-items:stretch;width:100%;gap:10px}
+  .ctas .btn{justify-content:center;min-height:54px}
+  .sec{padding-block:52px}
+  .zones-band .wide{gap:26px}
+  .zgrid{grid-template-columns:1fr 1fr}
+  .zgrid li{padding:16px 10px 16px 0}
+  .zgrid .zn{font-size:30px}
+  .zgrid .zr{font-size:10px;letter-spacing:.1em}
+  .zfoot{flex-direction:column;align-items:stretch}
+  .zfoot .btn{justify-content:center;min-height:52px}
+  .strip{height:240px}
+  .strip span{font-size:20px;padding-block:16px}
+  .formcard{margin-top:28px;padding:22px 18px 26px;margin-inline:-6px}
+  form{gap:22px}
+  .fs{gap:16px}
+  label.chip span{padding:10px 16px}
+  .submit{min-height:58px}
+  .foot .wide{flex-direction:column;gap:6px}
+}
+
+/* pulsante fisso su telefono */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));background:rgba(247,244,240,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s ease}
+.dock.on{transform:none}
+.dock .btn{width:100%;justify-content:space-between;min-height:52px}
+@media (min-width:701px){.dock{display:none}}
+
+@media (prefers-reduced-motion:no-preference){
+  .hero .read > *{animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+  .hero .read > *:nth-child(2){animation-delay:.06s}
+  .hero .read > *:nth-child(3){animation-delay:.12s}
+  .hero .read > *:nth-child(4){animation-delay:.18s}
+  @keyframes rise{from{transform:translateY(10px)}to{transform:none}}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+
+.docnote{margin:0;font-size:15px;color:var(--grey);background:var(--bg);border-radius:4px;padding:14px 16px}
+.docnote b{color:var(--ink);font-weight:600}
+.privacy{background:var(--panel);padding-block:56px}
+.privacy .read{display:flex;flex-direction:column;gap:14px}
+.privacy p{margin:0;font-size:16px}
+.privacy .btn{align-self:flex-start;margin-top:6px}
+.done .btn{margin-top:8px}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="logo" role="img" aria-label="Mosnel, Franciacorta, 1836"></div></header>
+
+<main id="v-pagina">
+  <section class="hero gut" aria-label="Unisciti a noi">
+    <div class="hero-photo" role="img" aria-label="Botti con il marchio Mosnel nella cantina storica"></div>
+    <div class="wide">
+      <span class="eyebrow">Cerchiamo agenti<span class="eyebrow-extra"> · Merano Wine Festival 2026</span></span>
+      <h1>Unisciti a noi<span class="dot">.</span></h1>
+      <p class="lead">Stiamo ampliando e rinnovando la nostra struttura commerciale. Inoltraci la tua candidatura.</p>
+      <div class="ctas">
+        <button class="btn primary" type="button" data-go="form-sec">Candidati ora <span class="arr" aria-hidden="true"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec zones-band gut" aria-labelledby="z-title">
+    <div class="wide">
+      <div class="sec-head" style="align-items:flex-start;text-align:left">
+        <span class="eyebrow">Zone aperte</span>
+        <h2 id="z-title">Dove cerchiamo</h2>
+      </div>
+      <ul class="zgrid">
+        <li><span class="zn">Treviso</span><span class="zr">Veneto</span></li>
+        <li><span class="zn">Verona</span><span class="zr">Veneto</span></li>
+        <li><span class="zn">Udine</span><span class="zr">Friuli Venezia Giulia</span></li>
+        <li><span class="zn">Arezzo</span><span class="zr">Toscana</span></li>
+      </ul>
+      <div class="zfoot">
+        <p>Se la tua area non è citata nell'elenco sopra</p>
+        <button class="btn primary" type="button" data-go="form-sec">Clicca qui <span class="arr" aria-hidden="true"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip gut" role="img" aria-label="La tenuta Mosnel tra le vigne della Franciacorta"><div class="wide" style="width:100%"><span>Questo è quello che racconterai.</span></div></div>
+
+  <section class="sec gut" id="form-sec" aria-labelledby="f-title">
+    <div class="read">
+      <div class="sec-head">
+        <span class="eyebrow">Candidatura</span>
+        <h2 id="f-title">Candidati ora</h2>
+        <p class="hint">Un minuto dal telefono. Il CV puoi mandarlo anche dopo.</p>
+      </div>
+      <div class="formcard">
+        <form id="f" novalidate>
+          <fieldset class="fs">
+            <legend>Chi sei</legend>
+            <div class="row">
+              <div class="field"><label class="l" for="nome">Nome e cognome</label><input type="text" id="nome" autocomplete="name" autocapitalize="words" required></div>
+              <div class="field"><label class="l" for="agenzia">Agenzia <span class="opt">(facoltativo)</span></label><input type="text" id="agenzia" autocomplete="organization" placeholder="Nome dell'agenzia"></div>
+            </div>
+            <div class="row">
+              <div class="field"><label class="l" for="tel">Telefono</label><input type="tel" id="tel" autocomplete="tel" inputmode="tel"></div>
+              <div class="field"><label class="l" for="email">Email</label><input type="email" id="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false"></div>
+            </div>
+          </fieldset>
+          <fieldset class="fs">
+            <legend>Come lavori</legend>
+            <div class="field">
+              <label class="l" for="zona">Zona per cui ti candidi</label>
+              <input type="text" id="zona" autocapitalize="words" placeholder="Province, città o aree" required>
+            </div>
+            <div class="field">
+              <span class="l" id="cl">Canali che segui</span>
+              <div class="chips" role="group" aria-labelledby="cl">
+                <label class="chip"><input type="checkbox" id="c1" value="Ristoranti"><span>Ristoranti</span></label>
+                <label class="chip"><input type="checkbox" id="c2" value="Enoteche"><span>Enoteche</span></label>
+                <label class="chip"><input type="checkbox" id="c3" value="Wine bar"><span>Wine bar</span></label>
+                <label class="chip"><input type="checkbox" id="c4" value="Hotel"><span>Hotel</span></label>
+                <label class="chip"><input type="checkbox" id="c5" value="Distribuzione"><span>Distribuzione</span></label>
+              </div>
+            </div>
+            <div class="field">
+              <label class="l" for="aziende">Aziende attualmente rappresentate</label>
+              <textarea id="aziende" placeholder="Cantine, distillerie e altri mandati"></textarea>
+            </div>
+          </fieldset>
+          <fieldset class="fs">
+            <legend>Documenti</legend>
+            <p class="docnote">Premendo "Invia candidatura" si apre la tua app di posta con la candidatura già scritta: lì puoi allegare CV o presentazione. Puoi anche mandarli in seguito a <b>candidature@mosnelfranciacorta.it</b>.</p>
+            <label class="consent"><input type="checkbox" id="privacy"><span>Ho letto l'<a href="#privacy" data-privacy>informativa privacy</a> e acconsento al trattamento dei dati per valutare la collaborazione.</span></label>
+            <p class="error" id="err" hidden></p>
+          </fieldset>
+          <button class="btn primary submit" type="submit"><span>Invia candidatura</span><span class="arr" aria-hidden="true"></span></button>
+        </form>
+        <div class="done" id="done" hidden>
+          <h2>Ci siamo quasi.</h2>
+          <p>Si è aperta la tua app di posta con la candidatura già scritta. Allega il CV se vuoi e premi <b>Invia</b>.</p>
+          <p class="hint">Non si è aperta? Scrivi a <b>candidature@mosnelfranciacorta.it</b> indicando nome, zona e aziende rappresentate.</p>
+          <button class="btn ghost" type="button" id="again">Torna al modulo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="dock" id="dock" aria-hidden="true"><button class="btn primary" type="button" data-go="form-sec" tabindex="-1"><span>Candidati ora</span><span class="arr" aria-hidden="true"></span></button></div>
+
+  <section class="privacy gut" id="privacy" hidden aria-labelledby="p-title">
+    <div class="read">
+      <h2 id="p-title">Informativa privacy</h2>
+      <p>Il titolare del trattamento è Azienda Agricola Mosnel, Camignone di Passirano (BS). Puoi contattarci a candidature@mosnelfranciacorta.it.</p>
+      <p><b>Quali dati.</b> Nome, recapiti, zona di interesse, aziende rappresentate e i documenti che scegli di inviarci, come CV o presentazione.</p>
+      <p><b>Perché.</b> Solo per valutare una possibile collaborazione come agente di commercio e per ricontattarti. La base del trattamento è la tua richiesta e il consenso che ci dai inviando la candidatura.</p>
+      <p><b>Per quanto tempo.</b> Conserviamo i dati per 24 mesi, poi li cancelliamo, salvo che nasca una collaborazione.</p>
+      <p><b>Con chi.</b> I dati non vengono ceduti a terzi. Possono essere trattati dai fornitori dei servizi di posta elettronica che usiamo, solo per conto nostro.</p>
+      <p><b>I tuoi diritti.</b> Puoi chiedere in qualsiasi momento di vedere, correggere o cancellare i tuoi dati, oppure revocare il consenso, scrivendo a candidature@mosnelfranciacorta.it. Puoi anche presentare reclamo al Garante per la protezione dei dati personali.</p>
+      <button class="btn ghost" type="button" id="p-close">Chiudi</button>
+    </div>
+  </section>
+
+  <footer class="foot gut">
+    <div class="wide"><span>Mosnel · Franciacorta DOCG · dal 1836</span><span>candidature@mosnelfranciacorta.it</span><a href="#privacy" data-privacy>Informativa privacy</a></div>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function go(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});}
+  document.querySelectorAll("[data-go]").forEach(function(b){b.addEventListener("click",function(){go(b.dataset.go)})});
+
+  var pv=document.getElementById("privacy");
+  function openPrivacy(e){if(e)e.preventDefault();pv.hidden=false;go("privacy");}
+  document.querySelectorAll("[data-privacy]").forEach(function(a){a.addEventListener("click",openPrivacy)});
+  document.getElementById("p-close").addEventListener("click",function(){pv.hidden=true;go("form-sec");});
+  if(location.hash==="#privacy")openPrivacy();
+
+  var dock=document.getElementById("dock");
+  if("IntersectionObserver" in window){
+    var vis={hero:true,form:false};
+    function upd(){var on=!vis.hero&&!vis.form;dock.classList.toggle("on",on);dock.setAttribute("aria-hidden",on?"false":"true");dock.querySelector("button").tabIndex=on?0:-1;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){vis[e.target.dataset.k]=e.isIntersecting});upd();},{threshold:0.05});
+    [["hero",".hero"],["form","#form-sec .formcard"]].forEach(function(p){var el=document.querySelector(p[1]);el.dataset.k=p[0];io.observe(el);});
+  }
+
+  var f=document.getElementById("f"),err=document.getElementById("err"),done=document.getElementById("done");
+  function v(id){return document.getElementById(id).value.trim();}
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var miss=[];
+    if(!v("nome"))miss.push("nome e cognome");
+    if(!v("tel")&&!v("email"))miss.push("un telefono o un'email");
+    if(!v("zona"))miss.push("la zona");
+    if(!document.getElementById("privacy").checked)miss.push("il consenso privacy");
+    if(miss.length){err.textContent="Per inviare manca: "+miss.join(", ")+".";err.hidden=false;err.scrollIntoView({block:"center"});return;}
+    err.hidden=true;
+    var canali=[].slice.call(document.querySelectorAll(".chips input:checked")).map(function(c){return c.value}).join(", ");
+    var body=["Nome e cognome: "+v("nome"),"Agenzia: "+(v("agenzia")||"-"),"Telefono: "+(v("tel")||"-"),"Email: "+(v("email")||"-"),"Zona: "+v("zona"),"Canali: "+(canali||"-"),"Aziende rappresentate: "+(v("aziende")||"-"),"","Consenso privacy: sì","","(Allega qui CV o presentazione, se vuoi)"].join("\n");
+    var subj="Candidatura agente - "+v("zona");
+    location.href="mailto:candidature@mosnelfranciacorta.it?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);
+    f.hidden=true;done.hidden=false;
+  });
+  document.getElementById("again").addEventListener("click",function(){done.hidden=true;f.hidden=false;});
+})();
+</script>
+
+</body>
+</html>
