@@ -109,9 +109,12 @@ h2{font-family:var(--display);font-weight:600;font-size:clamp(34px, 4.2vw, 52px)
 .zcap .zr{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#E7D9C4}
 .zlink{all:unset;box-sizing:border-box;position:absolute;inset:0;display:block;cursor:pointer;border-radius:4px}
 .zlink:focus-visible{outline:2px solid var(--bronze-deep);outline-offset:3px}
-.zgo{position:absolute;top:14px;right:14px;z-index:2;font:600 12px var(--sans);letter-spacing:.04em;color:var(--ink);background:rgba(255,255,255,.92);border-radius:999px;padding:6px 12px;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s}
-.zcard:hover .zgo,.zlink:focus-visible .zgo{opacity:1;transform:none}
-@media (hover:none){.zgo{opacity:1;transform:none;font-size:11px;padding:5px 10px;top:10px;right:10px}}
+.zgo{position:absolute;right:14px;bottom:18px;z-index:3;display:inline-flex;align-items:center;gap:8px;font:600 13px var(--sans);color:var(--ink);background:var(--white);border-radius:4px;padding:8px 12px;box-shadow:0 4px 14px rgba(0,0,0,.18);transition:background .2s,color .2s}
+.zarr{width:16px;height:1px;background:currentColor;position:relative;transition:width .25s}
+.zarr::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.zcard:hover .zgo,.zlink:focus-visible .zgo{background:var(--bronze-deep);color:var(--white)}
+.zcard:hover .zarr{width:22px}
+.zcap{padding-right:120px}
 .zcredit{margin:0;font-size:11px;line-height:1.5;color:var(--grey)}
 .zcredit a{color:var(--grey)}
 @media (max-width:959px){.zgrid{grid-template-columns:repeat(2, minmax(0,1fr))}}
@@ -179,7 +182,8 @@ label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset
   .zones-band .wide{gap:26px}
   .zgrid{gap:10px}
   .zcard{aspect-ratio:4/5}
-  .zcap{padding:12px 12px 14px}
+  .zcap{padding:12px 12px 52px}
+  .zgo{right:10px;bottom:12px;font-size:12px;padding:7px 10px}
   .zcap .zn{font-size:28px}
   .zcap .zr{font-size:9px;letter-spacing:.12em}
   .zfoot{flex-direction:column;align-items:stretch}
@@ -248,10 +252,10 @@ label.chip:focus-within span{outline:2px solid var(--bronze-deep);outline-offset
         <h2 id="z-title">Dove cerchiamo</h2>
       </div>
       <ul class="zgrid">
-        <li class="zcard"><button class="zlink" type="button" data-go="form-sec" aria-label="Candidati per la zona di Treviso"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Dal_ponte_dei_Buranelli_a_Treviso.jpg/960px-Dal_ponte_dei_Buranelli_a_Treviso.jpg" alt="Il canale dei Buranelli a Treviso" loading="lazy" decoding="async" style="object-position:50% 55%"><div class="zcap"><span class="zn">Treviso</span><span class="zr">Veneto</span></div><span class="zgo" aria-hidden="true">Candidati</span></button></li>
-        <li class="zcard"><button class="zlink" type="button" data-go="form-sec" aria-label="Candidati per la zona di Verona"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Italy_-_Verona_-_Arena.jpg/960px-Italy_-_Verona_-_Arena.jpg" alt="L'Arena di Verona" loading="lazy" decoding="async" style="object-position:50% 50%"><div class="zcap"><span class="zn">Verona</span><span class="zr">Veneto</span></div><span class="zgo" aria-hidden="true">Candidati</span></button></li>
-        <li class="zcard"><button class="zlink" type="button" data-go="form-sec" aria-label="Candidati per la zona di Udine"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Udine_Loggia_del_Lionello.jpg/960px-Udine_Loggia_del_Lionello.jpg" alt="La Loggia del Lionello a Udine" loading="lazy" decoding="async" style="object-position:50% 50%"><div class="zcap"><span class="zn">Udine</span><span class="zr">Friuli Venezia Giulia</span></div><span class="zgo" aria-hidden="true">Candidati</span></button></li>
-        <li class="zcard"><button class="zlink" type="button" data-go="form-sec" aria-label="Candidati per la zona di Arezzo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Piazza_Grande_Arezzo.JPG/960px-Piazza_Grande_Arezzo.JPG" alt="Piazza Grande ad Arezzo" loading="lazy" decoding="async" style="object-position:50% 55%"><div class="zcap"><span class="zn">Arezzo</span><span class="zr">Toscana</span></div><span class="zgo" aria-hidden="true">Candidati</span></button></li>
+        <li class="zcard"><button class="zlink" type="button" data-go="form-sec" aria-label="Candidati per la zona di Treviso"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Dal_ponte_dei_Buranelli_a_Treviso.jpg/960px-Dal_ponte_dei_Buranelli_a_Treviso.jpg" alt="Il canale dei Buranelli a Treviso" loading="lazy" decoding="async" style="object-position:50% 55%"><div class="zcap"><span class="zn">Treviso</span><span class="zr">Veneto</span></div><span class="zgo" aria-hidden="true">Clicca qui <span class="zarr"></span></span></button></li>
+        <li class="zcard"><button class="zlink" type="button" data-go="form-sec" aria-label="Candidati per la zona di Verona"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Italy_-_Verona_-_Arena.jpg/960px-Italy_-_Verona_-_Arena.jpg" alt="L'Arena di Verona" loading="lazy" decoding="async" style="object-position:50% 50%"><div class="zcap"><span class="zn">Verona</span><span class="zr">Veneto</span></div><span class="zgo" aria-hidden="true">Clicca qui <span class="zarr"></span></span></button></li>
+        <li class="zcard"><button class="zlink" type="button" data-go="form-sec" aria-label="Candidati per la zona di Udine"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Udine_Loggia_del_Lionello.jpg/960px-Udine_Loggia_del_Lionello.jpg" alt="La Loggia del Lionello a Udine" loading="lazy" decoding="async" style="object-position:50% 50%"><div class="zcap"><span class="zn">Udine</span><span class="zr">Friuli Venezia Giulia</span></div><span class="zgo" aria-hidden="true">Clicca qui <span class="zarr"></span></span></button></li>
+        <li class="zcard"><button class="zlink" type="button" data-go="form-sec" aria-label="Candidati per la zona di Arezzo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Piazza_Grande_Arezzo.JPG/960px-Piazza_Grande_Arezzo.JPG" alt="Piazza Grande ad Arezzo" loading="lazy" decoding="async" style="object-position:50% 55%"><div class="zcap"><span class="zn">Arezzo</span><span class="zr">Toscana</span></div><span class="zgo" aria-hidden="true">Clicca qui <span class="zarr"></span></span></button></li>
       </ul>
       <div class="zfoot">
         <p>Se la tua area non è citata nell'elenco sopra</p>
